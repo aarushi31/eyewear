@@ -1,0 +1,52 @@
+.footer {
+    
+    width: 100%;
+    background-color: #26222F;
+    color: white;
+    display: flex;
+    padding: 100px 50px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 300;
+    font-size: smaller;
+  }
+
+  .section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+  }
+
+  .section h3{
+      font-size: 20px;
+      font-weight: lighter;
+      line-height: 50px;
+  }
+
+  .section span,.section p{
+      font-size: 14px;
+      color: grey;
+      
+  }
+  .section span:hover{
+      color: white;
+      cursor: pointer;
+  }
+  .icons{
+      display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .copyright{
+      width: 100%;
+      background-color: #26222F;
+      color: grey;
+      font-size: 14px;
+      border-top: 1px solid grey;
+      text-align: center;
+      padding: 20px 0;
+  }
+ 

@@ -1,0 +1,32 @@
+.products{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 30px;
+}
+
+.product{
+    border: 1px solid grey;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.product span{
+    font-weight: 600;
+    color: grey;
+    font-size: 18px;
+    text-align: center;
+}
+
+.product img{
+    width: 100%;
+}
+

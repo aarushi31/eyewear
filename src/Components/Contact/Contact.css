@@ -1,0 +1,52 @@
+.contact-us{
+    width: 100%;
+    padding: 70px 50px;
+    color: grey;
+}
+
+.contact-us h3{
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid grey;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.contact{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: grey;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.contact-form{
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.left-container, .right-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-container{
+    width: 300px;
+    line-height: 20px;
+}
+
+.right-container{
+    width: 60%;
+}

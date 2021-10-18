@@ -1,0 +1,43 @@
+.reading-container{
+    width: 100%;
+    background-image: url("https://c8.alamy.com/zooms/9/32a64f978e7d4030a0f59bdc08ee5085/2dbch4x.jpg");
+    padding: 50px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 300px;
+    top: 70px;
+}
+
+.text h3{
+    color: white;
+    font-size: 60px;
+    font-weight: 900;
+
+}
+
+.text span{
+    color: rgb(196, 233, 248);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.text button{
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    text-align: center;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 12px;
+    margin-top: 20px;
+}
