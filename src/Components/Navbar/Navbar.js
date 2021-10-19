@@ -21,7 +21,7 @@ function navbar() {
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
       </NavDropdown>
       <Nav.Link href="/contact">Contact</Nav.Link>
-      <Nav.Link href="#pricing">About</Nav.Link>
+      <Nav.Link href="/about">About</Nav.Link>
       
     </Nav>
     <Nav>
