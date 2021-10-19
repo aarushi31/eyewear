@@ -12,7 +12,7 @@ function navbar() {
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
        <NavDropdown title="Shop" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Eye Wear</NavDropdown.Item>
+        <NavDropdown.Item href="/eyewear">Eye Wear</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Sunshades</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Reading Wear</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Magic Lenses</NavDropdown.Item>
