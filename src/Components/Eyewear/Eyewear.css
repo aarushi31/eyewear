@@ -36,6 +36,16 @@
     font-size: 20px;
 }
 
+.categories Link,.categories Link:hover,.categories Link:visited,.categories Link:link,.categories Link:active{
+    text-decoration: none;
+    color: grey;
+}
+
+.link{
+    color: grey;
+    text-decoration: none;
+}
+
 .result{
     display: flex;
     justify-content: flex-start;

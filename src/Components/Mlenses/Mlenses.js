@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import './Eyewear.css'
+import '../Eyewear/Eyewear.css'
+import {Link} from 'react-router-dom'
 
-function Eyewear() {
+function Mlenses() {
     return (
         <div className="main-container">
             <div className="categories">
@@ -21,8 +21,8 @@ function Eyewear() {
                 <span className="category-item"><Link to="/trending" className="link">Trending</Link></span>
             </div>
             <div className="result">
-                <span className="desc">Home / Eyewear</span>
-                <span className="category-heading">Eyewear</span>
+                <span className="desc">Home / Magic Lenses</span>
+                <span className="category-heading">Magic Lenses</span>
                 <span className="desc">under this section we provide you with all the accessories required to help you taking care of your products</span>
                 <span className="desc">Showing all 2 results</span>
                 <div className="products">
@@ -42,4 +42,4 @@ function Eyewear() {
     )
 }
 
-export default Eyewear
+export default Mlenses

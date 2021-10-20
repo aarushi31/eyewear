@@ -8,6 +8,15 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
 import Eyewear from './Components/Eyewear/Eyewear';
+import Accessory from './Components/Accessories/Accessory';
+import Mlenses from './Components/Mlenses/Mlenses';
+import Bifocal from './Components/ReadingGlasses/Bifocal';
+import Single from './Components/ReadingGlasses/Single';
+import Male from './Components/Gender/Male';
+import Female from './Components/Gender/Female';
+import Kids from './Components/Gender/Kids'
+import Sunshades from './Components/Sunshades/Sunshades';
+import Trending from './Components/Trending/Trending';
 
 function App() {
   return (
@@ -18,6 +27,15 @@ function App() {
         <Route path="/contact" component={Contact}/>
         <Route path="/about" component={About}/>
         <Route path="/eyewear" component={Eyewear}/>
+        <Route path="/accessories" component={Accessory}/>
+        <Route path="/magic-lenses" component={Mlenses}/>
+        <Route path="/bifocal" component={Bifocal}/>
+        <Route path="/single-vision" component={Single}/>
+        <Route path="/male" component={Male}/>
+        <Route path="/female" component={Female}/>
+        <Route path="/kids" component={Kids}/>
+        <Route path="/sun-shades" component={Sunshades}/>
+        <Route path="/trending" component={Trending}/>
       </Switch>
       <Footer/>
       <Copyright/>

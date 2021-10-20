@@ -13,10 +13,10 @@ function navbar() {
     <Nav className="me-auto">
        <NavDropdown title="Shop" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/eyewear">Eye Wear</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Sunshades</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Reading Wear</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Magic Lenses</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Accessories</NavDropdown.Item>
+        <NavDropdown.Item href="/sun-shades">Sunshades</NavDropdown.Item>
+        <NavDropdown.Item href="/bifocal">Reading Wear</NavDropdown.Item>
+        <NavDropdown.Item href="/magic-lenses">Magic Lenses</NavDropdown.Item>
+        <NavDropdown.Item href="/accessories">Accessories</NavDropdown.Item>
         {/* <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
       </NavDropdown>
