@@ -1,12 +1,13 @@
 import React from 'react'
 import './Navbar.css'
-import {Navbar,NavDropdown,Nav,Container,OverlayTrigger} from 'react-bootstrap'
+import {Navbar,NavDropdown,Nav,Container,OverlayTrigger,Popover} from 'react-bootstrap'
 
 
 function navbar() {
 
     const popover=()=>{
       return(
+        <Popover>
         <div className="popover">
           <div className="cart-product">
             <img src="https://d1wwyfhxuarwk4.cloudfront.net/images/products/common/white/xl/4436-32-w_fun-shades-sunglasses-navy-blue4e76410a050c142b3b7a399cc8b96340.jpg" alt="glasses"/>
@@ -17,14 +18,28 @@ function navbar() {
           <p className="links">View Cart</p>
           <p className="links">Checkout</p>
         </div>
+        </Popover>
       )
     }
+
+    const searchpopover = ()=>{
+      return(
+        <Popover id="popover-basic" style={{marginLeft:'100px',marginTop:'10px'}}>
+        
+          <input placeholder="Search" type="text" style={{width:'100%',padding:'10px'}}/>
+         
+        </Popover>
+      )
+    };
 
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
   <Container>
-  <Navbar.Brand href="#home"><i class="fas fa-search"></i></Navbar.Brand>
+  <OverlayTrigger trigger="click" placement="right" overlay={searchpopover}>
+    <Navbar.Brand style={{cursor:'pointer'}}><i class="fas fa-search"></i></Navbar.Brand>
+  </OverlayTrigger>
+  
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">

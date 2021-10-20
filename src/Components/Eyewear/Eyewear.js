@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Eyewear.css'
 
+
 function Eyewear() {
     return (
         <div className="main-container">
@@ -19,6 +20,8 @@ function Eyewear() {
                 <span className="sub-category-items"><Link to="/single-vision" className="link">Single vision</Link></span>
                 <span className="category-item"><Link to="/sun-shades" className="link">Sun Shades</Link></span>
                 <span className="category-item"><Link to="/trending" className="link">Trending</Link></span>
+                <span className="category-heading">Filters</span>
+                
             </div>
             <div className="result">
                 <span className="desc">Home / Eyewear</span>
