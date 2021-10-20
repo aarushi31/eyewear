@@ -17,6 +17,7 @@ import Female from './Components/Gender/Female';
 import Kids from './Components/Gender/Kids'
 import Sunshades from './Components/Sunshades/Sunshades';
 import Trending from './Components/Trending/Trending';
+import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/kids" component={Kids}/>
         <Route path="/sun-shades" component={Sunshades}/>
         <Route path="/trending" component={Trending}/>
+        <Route path="/cart" component={Cart}/>
       </Switch>
       <Footer/>
       <Copyright/>

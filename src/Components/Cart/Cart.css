@@ -1,0 +1,55 @@
+.cart{
+    width: 100%;
+    padding: 30px;
+
+}
+
+.cart-heading{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.cart-table{
+    margin-top: 50px;
+}
+
+.cart-table Container{
+    width: 100%;
+    border:0.2px solid rgb(230, 230, 230)
+}
+
+.col-heading{
+    color: grey;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.col-content{
+    color: grey;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.apply-coupon{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.cart-total{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    
+    margin-top: 30px;
+}
+
+.cart-total Container{
+    width: 50vw;
+}
+
+
+

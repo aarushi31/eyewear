@@ -59,7 +59,7 @@ function navbar() {
         popover()
       }
     >
-            <Nav.Link><i class="fas fa-shopping-bag" style={{fontSize:'30px'}}></i></Nav.Link>
+            <Nav.Link href="/cart"><i class="fas fa-shopping-bag" style={{fontSize:'30px'}}></i></Nav.Link>
     </OverlayTrigger>
 
 </>
