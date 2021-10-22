@@ -1,8 +1,15 @@
 import React from 'react'
 import '../Eyewear/Eyewear.css'
 import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 
 function Sunshades() {
+
+    const history=useHistory()
+    const handleAddToCart=()=>{
+        
+    }
+
     return (
         <div className="main-container">
             <div className="categories">
@@ -27,14 +34,16 @@ function Sunshades() {
                 <span className="desc">Showing all 2 results</span>
                 <div className="products">
                     <div className="product" style={{border:'none'}}>
-                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/bio_true_1_1-300x133.jpg" alt="product"/>
-                        <span>Bio true 60 ml</span>
+                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/12_126-300x133.jpg" alt="product" onClick={()=>history.push('/product')} style={{cursor:'pointer'}}/>
+                        <span onClick={()=>history.push('/product')} style={{cursor:'pointer'}}>Black Oval Full Rim Acetate Frame with Gradient Grey UV Sun Lens</span>
                         <span style={{color:'rgb(34, 114, 160)'}}>₹799.00</span>
+                        <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
                     </div>
                     <div className="product" style={{border:'none'}}>
-                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/bio_true_1_1-300x133.jpg" alt="product"/>
-                        <span>Bio true 60 ml</span>
+                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/a3_43-400x178.jpg" alt="product" onClick={()=>history.push('/product')} style={{cursor:'pointer'}}/>
+                        <span onClick={()=>history.push('/product')} style={{cursor:'pointer'}}>Golden Aviator Full Rim Metal Frame</span>
                         <span style={{color:'rgb(34, 114, 160)'}}>₹799.00</span>
+                        <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
                     </div>
                 </div>
             </div>
