@@ -20,6 +20,10 @@ import Trending from './Components/Trending/Trending';
 import Cart from './Components/Cart/Cart';
 import Product from './Components/Product/Product';
 import EyewearProduct from './Components/Eyewear/EyewearProduct';
+import Login from './Components/Login/Login';
+import Register from './Components/Login/Register';
+import EditProfile from './Components/Login/EditProfile';
+import ChangePassword from './Components/Login/ChangePassword';
 
 function App() {
   return (
@@ -42,6 +46,10 @@ function App() {
         <Route path="/cart" component={Cart}/>
         <Route path="/product" component={Product}/>
         <Route path="/product/eyewear" component={EyewearProduct}/>
+        <Route path="/login" component={Login}/>
+        <Route path="/register" component={Register}/>
+        <Route path="/edit-profile" component={EditProfile}/>
+        <Route path="/change-password" component={ChangePassword}/>
       </Switch>
       <Footer/>
       <Copyright/>

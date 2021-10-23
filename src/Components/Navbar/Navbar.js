@@ -79,7 +79,12 @@ function navbar() {
 
 </>
 
-      <Nav.Link><i class="fas fa-user-circle" style={{fontSize:'30px'}}></i></Nav.Link>
+      
+      <NavDropdown title={<i class="fas fa-user-circle" style={{fontSize:'30px'}}></i>} id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+        <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+        <NavDropdown.Item href="/edit-profile">Edit Profile</NavDropdown.Item>
+      </NavDropdown>
     </Nav>
   </Navbar.Collapse>
   </Container>
