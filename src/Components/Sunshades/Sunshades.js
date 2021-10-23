@@ -44,6 +44,7 @@ function Sunshades() {
                         <span onClick={()=>history.push('/product')} style={{cursor:'pointer'}}>Golden Aviator Full Rim Metal Frame</span>
                         <span style={{color:'rgb(34, 114, 160)'}}>₹799.00</span>
                         <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
+                        
                     </div>
                 </div>
             </div>

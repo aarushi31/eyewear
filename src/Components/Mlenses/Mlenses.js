@@ -1,9 +1,83 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../Eyewear/Eyewear.css'
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
+import {InputGroup,Form,Button,Modal} from 'react-bootstrap'
 
 function Mlenses() {
+    const history=useHistory()
+    const [show,setShow]=useState(true);
+    const [show2,setShow2]=useState(false);
+    const [option,setOption]=useState("1");
+    
+    
+
+    const handleSubmit=(success,e)=>{
+        //e.preventDefault();
+        setShow(false)
+
+        if(option==2){
+         
+           if(success) setShow2(true)
+        }
+        if(option==3){
+            history.push('/accessories');
+        }   
+    }
+
+    const modalData=()=>{
+        if(show===true){
+            return(
+                <div className="option-container">
+                    <h4>Select power type</h4>
+                    <Form>
+                        <InputGroup className="input">
+                            <Form.Check name="option" value="1" label="Fashion (zero power contact lenses)" inline type="radio" onClick={(e)=>setOption(e.target.value)}/>
+                            {/* <Form.Label style={{marginLeft:'30px'}}>Zero power(basic lenses just for protection and fashion)</Form.Label> */}
+                        </InputGroup>
+                        <InputGroup className="input">
+                            <Form.Check name="option" value="2" label="Powered contact lenses" inline type="radio" onClick={(e)=>setOption(e.target.value)}/>
+                        </InputGroup>
+                        <InputGroup className="input">
+                            <Form.Check label="Contact lens solution" value="3" name="option" inline type="radio" onClick={(e)=>setOption(e.target.value)}/>
+                            
+                        </InputGroup>
+                        <Button type="primary" style={{marginTop:'30px'}} onClick={(e)=>handleSubmit(1,e)}>Submit</Button>
+                    </Form>
+                </div>
+            )
+        }
+
+        else if(show2===true){
+            return(
+                <div className="option-container">
+                    <h4>Select power type</h4>
+                    <Form>
+                        <InputGroup className="input">
+                            <Form.Check name="option" value="1" label="–SPH power(only sph)" inline type="radio"/>
+                            {/* <Form.Label style={{marginLeft:'30px'}}>Zero power(basic lenses just for protection and fashion)</Form.Label> */}
+                        </InputGroup>
+                        <InputGroup className="input">
+                            <Form.Check name="option" value="2" label="+SPH power(only sph)" inline type="radio"/>
+                        </InputGroup>
+                        <InputGroup className="input">
+                            <Form.Check label="Cyl power (cyl>0.75)(only cyl)" value="3" name="option" inline type="radio"/>
+                            
+                        </InputGroup>
+                        <InputGroup className="input">
+                            <Form.Check label="Toric power(sph+cyl)" value="4" name="option" inline type="radio"/>
+                            
+                        </InputGroup>
+                        <Button type="primary" style={{marginTop:'30px'}} onClick={()=>setShow2(false)}>Submit</Button>
+                    </Form>
+                </div>
+            )
+        }
+
+    }
+
+
     return (
+        <>
         <div className="main-container">
             <div className="categories">
                 <span className="category-heading">Categories</span>
@@ -39,6 +113,24 @@ function Mlenses() {
                 </div>
             </div>
         </div>
+
+        <Modal show={show} onHide={()=>handleSubmit(1)}>
+            <Modal.Header closeButton>
+            {/* <Modal.Title>Select category</Modal.Title> */}
+            </Modal.Header>
+            <Modal.Body>{modalData()}</Modal.Body>
+            
+        </Modal>
+
+        <Modal show={show2} onHide={()=>setShow2(false)}>
+            <Modal.Header closeButton>
+            <Modal.Title>Power</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{modalData()}</Modal.Body>
+            
+        </Modal>
+
+        </>
     )
 }
 

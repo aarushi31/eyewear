@@ -98,3 +98,21 @@
     font-size: 12px;
     padding: 10px;
 }
+
+.prescription-header{
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+.prescription-text{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: grey;
+}

@@ -19,6 +19,7 @@ import Sunshades from './Components/Sunshades/Sunshades';
 import Trending from './Components/Trending/Trending';
 import Cart from './Components/Cart/Cart';
 import Product from './Components/Product/Product';
+import EyewearProduct from './Components/Eyewear/EyewearProduct';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
         <Route path="/trending" component={Trending}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/product" component={Product}/>
+        <Route path="/product/eyewear" component={EyewearProduct}/>
       </Switch>
       <Footer/>
       <Copyright/>

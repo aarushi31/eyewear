@@ -3,15 +3,28 @@ import { Container,Tabs,Tab,Modal,Button } from 'react-bootstrap'
 import StarRating from 'react-bootstrap-star-rating';
 import { useHistory } from 'react-router';
 import Options from '../Sunshades/Options';
-import './Product.css'
+import Lens from './Lens'
 
-function Product() {
+
+function EyewearProduct() {
     const history=useHistory();
     const [show, setShow] = useState(false);
     const [show2,setShow2]=useState(false);
+    const [show3,setShow3]=useState(false);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleClose = () => setShow3(false);
+    const handleShow = () => setShow3(true);
+
+    const handleAddToCart=()=>{
+        setShow(true);
+        
+    }
+
+    const closeModal=(success,e)=>{
+        // e.preventDefault()
+        setShow(false);
+        if(success) setShow2(true)
+    }
 
 
 
@@ -40,15 +53,15 @@ function Product() {
                     </div>
                 </div>
                 <div className="details">
-                    <span className="name">Black Oval Full Rim Acetate Frame With Gradient Grey UV Sun Lens</span>
+                    <span className="name">Blue Oval Full Rim TR-90 Frame-Computer Spex (Zero Power)
+</span>
                     <div className="prices">
                         <span className="striked">₹1,999.00</span>
                         <span>₹1,799.00</span>
                     </div>
                     <div className="purchase">
                         <input placeholder="Quantity" type="text"/>
-                        <button className="addcart" onClick={()=>history.push('/cart')}>Add to cart</button>
-                        <button className="addcart" onClick={()=>setShow2(true)}>Buy with prescription</button>
+                        <button className="addcart" onClick={handleAddToCart}>Add to cart</button>
                         <span className="size" onClick={handleShow}>Know your size</span>
                     </div>
                     <div className="characteristics">
@@ -129,11 +142,12 @@ function Product() {
                     
                 </Modal.Footer>
             </Modal>
-            <Options show={show2} onHide={()=>setShow2(false)}/>
+            <Options show={show} onHide={(e)=>closeModal(1,e)}/>
+            <Lens show={show2} onHide={()=>setShow2(false)}/>
 
            
         </>
     )
 }
 
-export default Product
+export default EyewearProduct

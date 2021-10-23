@@ -53,14 +53,14 @@ function Eyewear() {
                 <span className="desc">Showing all 2 results</span>
                 <div className="products">
                     <div className="product" style={{border:'none'}}>
-                        <img src="https://s2seyewear.com/wp-content/uploads/2021/07/a1_19-300x133.jpg" alt="product" onClick={()=>history.push('/product')}/>
-                        <span style={{cursor:'pointer'}} onClick={()=>history.push('/product')}>Blue Oval Full Rim TR-90 Frame-Computer Spex (Zero Power)</span>
+                        <img src="https://s2seyewear.com/wp-content/uploads/2021/07/a1_19-300x133.jpg" alt="product" onClick={()=>history.push('/product/eyewear')}/>
+                        <span style={{cursor:'pointer'}} onClick={()=>history.push('/product/eyewear')}>Blue Oval Full Rim TR-90 Frame-Computer Spex (Zero Power)</span>
                         <span style={{color:'rgb(34, 114, 160)'}}>₹799.00</span>
                         <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
                     </div>
                     <div className="product" style={{border:'none'}}>
-                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/1_6427-300x133.jpg" alt="product" onClick={()=>history.push('/product')}/>
-                        <span style={{cursor:'pointer'}} onClick={()=>history.push('/product')}>Black Cateye Style Metal Acetate Frame – Computer Spex (Zero Power)</span>
+                        <img src="https://s2seyewear.com/wp-content/uploads/2021/09/1_6427-300x133.jpg" alt="product" onClick={()=>history.push('/product/eyewear')}/>
+                        <span style={{cursor:'pointer'}} onClick={()=>history.push('/product/eyewear')}>Black Cateye Style Metal Acetate Frame – Computer Spex (Zero Power)</span>
                         <span style={{color:'rgb(34, 114, 160)'}}>₹1,799.00</span>
                         <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
                     </div>
