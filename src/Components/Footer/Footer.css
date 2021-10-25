@@ -5,7 +5,7 @@
     color: white;
     display: flex;
     padding: 100px 50px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-weight: 300;
     font-size: smaller;

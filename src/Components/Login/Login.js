@@ -7,7 +7,7 @@ function Login() {
     return (
         <div className="login-container">
             <h4>Login</h4>
-            <input className="login-input" type="email" placeholder="Email"/>
+            <input className="login-input" type="text" placeholder="Email/username"/>
             <input className="login-input" type="password" placeholder="Password"/>
             <Button type="primary">Login</Button>
             <span className="or">Or</span>

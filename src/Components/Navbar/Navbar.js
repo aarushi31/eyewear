@@ -1,6 +1,7 @@
 import React from 'react'
 import './Navbar.css'
 import {Navbar,NavDropdown,Nav,Container,OverlayTrigger,Popover} from 'react-bootstrap'
+import logo from '../../images/logo2.png'
 
 
 function navbar() {
@@ -34,16 +35,26 @@ function navbar() {
 
 
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar collapseOnSelect expand="lg" bg="#E3F6F5" variant="dark" style={{background:'#E3F6F5'}}>
   <Container>
   <OverlayTrigger trigger="click" placement="right" overlay={searchpopover}>
-    <Navbar.Brand style={{cursor:'pointer'}}><i class="fas fa-search"></i></Navbar.Brand>
+    <Navbar.Brand style={{cursor:'pointer'}}><i class="fas fa-search" style={{color:'black'}}></i></Navbar.Brand>
   </OverlayTrigger>
   
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
-       <NavDropdown title="Shop" id="collasible-nav-dropdown">
+    
+    <Nav>
+    <Nav.Link href="/"><img src={logo} alt="logo" style={{width:'80px'}}/></Nav.Link>
+    </Nav>
+    <Nav>
+      {/* <Nav.Link href="#deets"><i class="fab fa-instagram"></i></Nav.Link>
+      <Nav.Link href="#memes">
+      <i class="fab fa-facebook"></i>
+      </Nav.Link> */}
+      <>
+      <Nav className="me-auto" style={{color:'black',marginLeft:'700px'}}>
+       <NavDropdown title={<span style={{color:'black'}}>Shop</span>} id="collasible-nav-dropdown" style={{color:'black'}}>
         <NavDropdown.Item href="/eyewear">Eye Wear</NavDropdown.Item>
         <NavDropdown.Item href="/sun-shades">Sunshades</NavDropdown.Item>
         <NavDropdown.Item href="/bifocal">Reading Wear</NavDropdown.Item>
@@ -52,17 +63,11 @@ function navbar() {
         {/* <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
       </NavDropdown>
-      <Nav.Link href="/contact">Contact</Nav.Link>
-      <Nav.Link href="/about">About</Nav.Link>
+      <Nav.Link href="/contact" style={{color:'black'}}>Contact</Nav.Link>
+      <Nav.Link href="/about" style={{color:'black'}}>About</Nav.Link>
+      
       
     </Nav>
-    <Nav>
-      <Nav.Link href="#deets"><i class="fab fa-instagram"></i></Nav.Link>
-      <Nav.Link href="#memes">
-      <i class="fab fa-facebook"></i>
-      </Nav.Link>
-      <>
-  
     <OverlayTrigger
       
       key="bottom"
@@ -74,13 +79,13 @@ function navbar() {
         popover()
       }
     >
-            <Nav.Link href="/cart"><i class="fas fa-shopping-bag" style={{fontSize:'30px'}}></i></Nav.Link>
+            <Nav.Link href="/cart"><i class="fas fa-shopping-bag" style={{fontSize:'30px',color:'black'}}></i></Nav.Link>
     </OverlayTrigger>
 
 </>
 
       
-      <NavDropdown title={<i class="fas fa-user-circle" style={{fontSize:'30px'}}></i>} id="collasible-nav-dropdown">
+      <NavDropdown title={<i class="fas fa-user-circle" style={{fontSize:'30px',color:'black'}}></i>} id="collasible-nav-dropdown">
         <NavDropdown.Item href="/login">Login</NavDropdown.Item>
         <NavDropdown.Item href="/register">Register</NavDropdown.Item>
         <NavDropdown.Item href="/edit-profile">Edit Profile</NavDropdown.Item>

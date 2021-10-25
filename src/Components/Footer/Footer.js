@@ -4,7 +4,7 @@ import './Footer.css'
 function Footer() {
     return (
         <div className="footer">
-            <div className="section">
+            {/* <div className="section">
                 <p>At S2S eyewear we bring you the latest design and trend at the earliest with all the products well tested by the designated team.</p>
                 <div className="icons">
                     <i class="fab fa-instagram"/>
@@ -12,7 +12,7 @@ function Footer() {
                     <i class="fab fa-twitter"></i>
                 </div>
 
-            </div>
+            </div> */}
             <div className="section">
                 <h3>Quick Links</h3>
                 <span>About</span>

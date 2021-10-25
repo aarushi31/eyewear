@@ -1,10 +1,90 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
-import {Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Alert, Button} from 'react-bootstrap'
+import {Link,useHistory} from 'react-router-dom'
+import axios from 'axios'
 
 
 function Register() {
+    const history=useHistory()
+
+    const [firstname,setfirstname]=useState();
+    const [lastname,setlastname]=useState();
+    const [username,setusername]=useState();
+    const [email,setemail]=useState();
+    const [mobile,setmobile]=useState();
+    const [company,setcompany]=useState();
+    const [password,setpassword]=useState();
+    const [confirmPassword,setConfirmPassword]=useState();
+    const [address1,setaddress1]=useState();
+    const [address2,setaddress2]=useState();
+    const [city,setCity]=useState();
+    const [state,setstate]=useState();
+    const [pincode,setpincode]=useState();
+    const [country,setCountry]=useState();
+    const [error,setError]=useState('');
+    
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        setError('')
+        if(password!==confirmPassword){
+            setError('New and confirm passwords are different')
+        }
+        else if(!password || !confirmPassword){
+            setError('Please fill all the fields')
+        }
+        else{
+            var data = JSON.stringify({
+                "first_name": firstname,
+                "last_name": lastname,
+                "username":username,
+                "email": email,
+                "telephone": mobile,
+                "company": company,
+                "address_1": address1,
+                "address_2": address2,
+                "city": city,
+                "pin_code": parseInt(pincode),
+                "country":country,
+                "password": password,
+                "state":state
+            });
+
+            console.log(password)
+            
+            var config = {
+                method: 'post',
+                url: 'http://s2seyewearfortesting.pythonanywhere.com/api/register/',
+                headers: { 
+                'Content-Type': 'application/json'
+                },
+                data : data
+            };
+            
+            axios(config)
+            .then(function (response) {
+                console.log(response);
+                if(response.data.error){
+                    setError(response.data.error)
+                }
+                else{
+                
+                    history.push('/login')
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            
+        }
+        
+
+    }
+
+
+
+
     return (
         <div className="login-container" style={{}}>
             <h4>Register</h4>
@@ -12,75 +92,76 @@ function Register() {
             <div className="login-row">
                 <div className="row-input">
                     <label>Firstname</label>
-                    <input className="login-input" placeholder="Firstname" type="text"/>
+                    <input className="login-input" placeholder="Firstname" type="text" value={firstname} onChange={(e)=>setfirstname(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Lastname</label>
-                <input className="login-input" placeholder="Lastname" type="text"/>
+                <input className="login-input" placeholder="Lastname" type="text" value={lastname} onChange={(e)=>setlastname(e.target.value)}/>
                 </div>
             </div>
             <div className="login-row">
                 <div className="row-input">
                 <label>Username</label>
-                <input className="login-input" placeholder="Username" type="text"/>
+                <input className="login-input" placeholder="Username" type="text" value={username} onChange={(e)=>setusername(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Email</label>
-                <input className="login-input" placeholder="email" type="text"/>
+                <input className="login-input" placeholder="email" type="text" value={email} onChange={(e)=>setemail(e.target.value)}/>
                 </div>
             </div>
             <div className="login-row">
                 <div className="row-input">
                 <label>Mobile no.</label>
-                <input className="login-input" placeholder="Mobile no." type="text"/>
+                <input className="login-input" placeholder="Mobile no." type="text" value={mobile} onChange={(e)=>setmobile(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Company</label>
-                <input className="login-input" placeholder="Company" type="text"/>
+                <input className="login-input" placeholder="Company" type="text" value={company} onChange={(e)=>setcompany(e.target.value)}/>
                 </div>
             </div>
             <div className="login-row">
                 <div className="row-input">
                 <label>Password</label>
-                <input className="login-input" placeholder="Password" type="password"/>
+                <input className="login-input" placeholder="Password" type="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Confirm Password</label>
-                <input className="login-input" placeholder="Confirm Password" type="password"/>
+                <input className="login-input" placeholder="Confirm Password" type="password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
                 </div>
             </div>
             <span className="or">Address</span>
             <div className="login-row">
                 <div className="row-input">
                 <label>Address line 1</label>
-                <input className="login-input" placeholder="Flat No./House No./Apartment Name" type="text"/>
+                <input className="login-input" placeholder="Flat No./House No./Apartment Name" type="text" value={address1} onChange={(e)=>setaddress1(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Address line 2</label>
-                <input className="login-input" placeholder="Street/Area" type="text"/>
+                <input className="login-input" placeholder="Street/Area" type="text" value={address2} onChange={(e)=>setaddress2(e.target.value)}/>
                 </div>
             </div>
             <div className="login-row">
                 <div className="row-input">
                 <label>City</label>
-                <input className="login-input" placeholder="City" type="text"/>
+                <input className="login-input" placeholder="City" type="text" value={city} onChange={(e)=>setCity(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>State</label>
-                <input className="login-input" placeholder="State" type="text"/>
+                <input className="login-input" placeholder="State" type="text" value={state} onChange={(e)=>setstate(e.target.value)}/>
                 </div>
             </div>
             <div className="login-row">
                 <div className="row-input">
                 <label>Country</label>
-                <input className="login-input" placeholder="Country" type="text"/>
+                <input className="login-input" placeholder="Country" type="text" value={country} onChange={(e)=>setCountry(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Pincode</label>
-                <input className="login-input" placeholder="Pincode" type="text"/>
+                <input className="login-input" placeholder="Pincode" type="text" value={pincode} onChange={(e)=>setpincode(e.target.value)}/>
                 </div>
             </div>
-            <Button type="primary">Register</Button>
+            <Button type="primary" onClick={(e)=>handleSubmit(e)}>Register</Button>
+            {error && <Alert variant="danger" style={{marginTop:'30px'}}>{error}</Alert>}
 
         </div>
     )

@@ -23,13 +23,14 @@
 }
 
 .review{
-    width: 50%;
+    width: 40%;
     margin-top: 50px;
 }
 
 .review-text{
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
+    width: 200px;
 }
 
 .user{
