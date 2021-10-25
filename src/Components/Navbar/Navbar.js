@@ -25,7 +25,7 @@ function navbar() {
 
     const searchpopover = ()=>{
       return(
-        <Popover id="popover-basic" style={{marginLeft:'100px',marginTop:'10px'}}>
+        <Popover id="popover-basic" style={{marginLeft:'200px',marginTop:'10px'}}>
         
           <input placeholder="Search" type="text" style={{width:'100%',padding:'10px'}}/>
          
@@ -37,9 +37,7 @@ function navbar() {
     return (
         <Navbar collapseOnSelect expand="lg" bg="#E3F6F5" variant="dark" style={{background:'#E3F6F5'}}>
   <Container>
-  <OverlayTrigger trigger="click" placement="right" overlay={searchpopover}>
-    <Navbar.Brand style={{cursor:'pointer'}}><i class="fas fa-search" style={{color:'black'}}></i></Navbar.Brand>
-  </OverlayTrigger>
+  
   
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -47,6 +45,9 @@ function navbar() {
     <Nav>
     <Nav.Link href="/"><img src={logo} alt="logo" style={{width:'80px'}}/></Nav.Link>
     </Nav>
+    <OverlayTrigger trigger="click" placement="right" overlay={searchpopover}>
+    <Navbar.Brand style={{cursor:'pointer'}}><i class="fas fa-search" style={{color:'black'}}></i></Navbar.Brand>
+  </OverlayTrigger>
     <Nav>
       {/* <Nav.Link href="#deets"><i class="fab fa-instagram"></i></Nav.Link>
       <Nav.Link href="#memes">
