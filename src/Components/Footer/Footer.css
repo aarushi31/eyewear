@@ -1,8 +1,8 @@
 .footer {
     
     width: 100%;
-    background-color: #26222F;
-    color: white;
+    background-color:  #E3F6F5;
+    color: black;
     display: flex;
     padding: 100px 50px;
     justify-content: space-around;
@@ -42,7 +42,7 @@
   
   .copyright{
       width: 100%;
-      background-color: #26222F;
+      background-color:  #E3F6F5;
       color: grey;
       font-size: 14px;
       border-top: 1px solid grey;
