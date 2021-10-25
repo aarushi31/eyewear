@@ -8,7 +8,7 @@ function Trendy() {
             <div>
                 <h3>Trendy arrivals</h3>
                 <div className="button">
-                    <span>Luce elegance collection</span>
+                    <span>The Latest Trends</span>
                     <button>View Collection</button>
                 </div>
                 
