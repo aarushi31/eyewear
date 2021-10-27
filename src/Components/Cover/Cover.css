@@ -41,3 +41,13 @@
 .slide-up {
     animation: slide-up 2s;
 }
+
+
+.cover{
+    width: 100%;
+}
+
+.cover img{
+    width: 100%;
+    margin-top: 100px;
+}

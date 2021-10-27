@@ -1,10 +1,10 @@
 .footer {
     
     width: 100%;
-    background-color:  #E3F6F5;
-    color: black;
+    background-color: #106894;
+    color: white;
     display: flex;
-    padding: 100px 50px;
+    padding: 70px 50px;
     justify-content: space-around;
     align-items: center;
     font-weight: 300;
@@ -27,7 +27,7 @@
 
   .section span,.section p{
       font-size: 14px;
-      color: grey;
+      color: white;
       
   }
   .section span:hover{
@@ -42,10 +42,10 @@
   
   .copyright{
       width: 100%;
-      background-color:  #E3F6F5;
-      color: grey;
+      background-color: #106894;
+      color: white;
       font-size: 14px;
-      border-top: 1px solid grey;
+      border-top: 1px solid white;
       text-align: center;
       padding: 20px 0;
   }

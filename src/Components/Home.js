@@ -11,7 +11,7 @@ import Trendy from './Trendy/Trendy'
 
 function Home() {
     return (
-        <>
+        <div style={{background:'#FFF1EC'}}>
           <Cover/>  
           <Category/>
           <Trendy/>
@@ -19,9 +19,9 @@ function Home() {
           <MagicLenses/>
           <Reading/>
           <Testimonials/>
-          <About/>
+          {/* <About/> */}
           {/* <Newsletter/> */}
-        </>
+        </div>
     )
 }
 

@@ -20,10 +20,9 @@
 
 .category span{
     text-transform: uppercase;
-    color: rgb(34, 114, 160);
     padding-top: 20px;
     width: 200px;
-    border-top: 2px solid rgb(34, 114, 160);
+    font-weight: 700;
     text-align: center;
 }
 
@@ -47,4 +46,16 @@
 .category img:hover {
 	animation: bounce 2s;
     cursor: pointer;
+}
+
+.green-heading{
+    letter-spacing: 0.2em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #106894;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-shadow: 0px -5px 39px rgba(0, 0, 0, 0.25);
+    margin-top: 100px;
 }
