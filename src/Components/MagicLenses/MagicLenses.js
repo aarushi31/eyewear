@@ -1,16 +1,18 @@
 import React from 'react'
 import './MagicLenses.css'
+import acc from '../../images/acc2.png'
+import acc2 from '../../images/acc3.png'
 
 function MagicLenses() {
     return (
         <div className="lenses-container">
-            <div className="lense">
+            <div className="lense" style={{background:`url(${acc})`,backgroundSize:'cover'}}>
                 <h3>Magic Lenses</h3>
-                <img src="https://images.squarespace-cdn.com/content/v1/5ff9ca36c1ead434c21a0760/1610391763928-AMO171PQ99TTQLGA48VE/image-asset.jpeg?format=1500w" alt="magic lenses"/>
+                
             </div>
-            <div className="lense">
+            <div className="lense" style={{background:`url(${acc2})`,backgroundSize:'cover'}}>
                 <h3>Accessories</h3>
-                <img src="https://images.squarespace-cdn.com/content/v1/5ff9ca36c1ead434c21a0760/1610391763928-AMO171PQ99TTQLGA48VE/image-asset.jpeg?format=1500w" alt="magic lenses"/>
+                
             </div>
         </div>
     )
