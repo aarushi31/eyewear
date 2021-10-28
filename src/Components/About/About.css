@@ -1,6 +1,7 @@
 .about{
     width: 100%;
     padding: 50px;
+    background-color: #FFF1EC;
 }
 
 .sub-container{
@@ -58,8 +59,9 @@
     text-transform: uppercase;
     font-size: 20px;
     letter-spacing: 3px;
-    font-weight: 300;
+    font-weight: 600;
     margin-top: 100px;
+    color: #106894;
 }
 
 .awards-container{
@@ -89,6 +91,8 @@
     font-size: 22px;
     letter-spacing: 3px;
     margin-bottom:170px ;
+    font-weight: 600;
+    color: #106894;
 }
 .philosophy p{
     width: 50%;

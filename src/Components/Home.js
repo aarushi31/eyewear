@@ -1,5 +1,4 @@
 import React from 'react'
-import About from './Aboutus/About'
 import Category from './Categories/Category'
 import Cover from './Cover/Cover'
 import MagicLenses from './MagicLenses/MagicLenses'

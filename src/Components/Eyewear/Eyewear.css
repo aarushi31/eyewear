@@ -4,47 +4,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #FFF1EC;
 }
 
 .categories{
     display: flex;
     flex-direction: column;
-    
+    padding-left: 30px;
     justify-content: center;
     width: 20%;
-    border-right:0.2px solid rgb(212, 212, 212);
+    border-right:0.5px solid rgb(0, 0, 0);
 }
 
 .category-heading{
     font-size: 30px;
     font-weight: 800;
-    color: #3A3A3A;
-    padding-left: 30px;
+    color:#106894;
+    
 }
 
 .category-item{
     color: grey;
     margin-top: 20px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 500;
 }
 
 .sub-category-items{
     margin-left: 30px;
     font-weight: 300;
-    color: grey;
+    color: #CC7549;
     margin-top: 20px;
     font-size: 20px;
 }
 
 .categories Link,.categories Link:hover,.categories Link:visited,.categories Link:link,.categories Link:active{
     text-decoration: none;
-    color: grey;
+    color: #CC7549;
 }
 
 .link{
-    color: grey;
+    color: #CC7549;
     text-decoration: none;
+    font-weight: 500;
 }
 
 .result{
@@ -54,13 +56,20 @@
     align-items: flex-start;
     flex-direction: column;
     height: 100%;
-    padding-right: 50px;
+    margin-right: 250px;
 }
 .result .desc{
-    font-weight: 300;
-    color: grey;
+    font-weight: 700;
+    color: black;
     font-size: 20px;
     width: 90%;
-    margin-top: 30px;
+    margin-top: 10px;
+    
+}
+
+.desc2{
+    color: grey;
+    font-weight: 300;
+    font-size: 16px;
     padding-left: 30px;
 }

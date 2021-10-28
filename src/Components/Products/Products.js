@@ -2,7 +2,7 @@ import React from 'react'
 import './Products.css'
 import coin from '../../images/product.png'
 import heart from '../../images/heart.svg'
-import bag from '../../images/bag.svg'
+import bag from '../../images/bag.svg' 
 
 function Products() {
     return (

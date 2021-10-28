@@ -6,7 +6,6 @@
 
 .about-container img{
     width: 50%;
-    border-radius: 10px;
     animation: 1s ease-out 0s 1 onLoad;
     
 }
@@ -31,7 +30,7 @@
 
 .about-text p{
     padding: 20px;
-    color: grey;
+    
     font-size: 18px;
 }
 
