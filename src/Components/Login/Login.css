@@ -7,12 +7,10 @@
 
 }
 
-img.eye{
-    
-    z-index: 9999;
-    font-size: 12px;
-    width: 20px;
-    
+.eye{
+    position: relative;
+    bottom: 30px;
+    left: 100px;
 }
 .user-container img{
     width: 45%;

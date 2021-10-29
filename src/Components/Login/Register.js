@@ -8,6 +8,28 @@ import axios from 'axios'
 function Register() {
     const history=useHistory()
 
+
+    const [type,setType]=useState('password');
+    const [type2,setType2]=useState('password');
+
+    const handleEye=()=>{
+        if(type==="password"){
+            setType('text');
+        }
+        else{
+            setType('password')
+        }
+    }
+
+    const handleEye2=()=>{
+        if(type2==="password"){
+            setType2('text');
+        }
+        else{
+            setType2('password')
+        }
+    }
+
     const [firstname,setfirstname]=useState();
     const [lastname,setlastname]=useState();
     const [username,setusername]=useState();
@@ -123,11 +145,13 @@ function Register() {
             <div className="login-row">
                 <div className="row-input">
                 <label>Password</label>
-                <input className="login-input" placeholder="Password" type="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                <input className="login-input" placeholder="Password" type={type} value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                <i className="far fa-eye eye" style={{color:'#EE9776',bottom:'0',left:'0',top:'10px',right:'50px'}} onClick={handleEye}></i>
                 </div>
                 <div className="row-input">
                 <label>Confirm Password</label>
-                <input className="login-input" placeholder="Confirm Password" type="password" value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                <input className="login-input" placeholder="Confirm Password" type={type2} value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
+                <i className="far fa-eye eye" style={{color:'#EE9776',bottom:'0',left:'0',top:'10px',right:'80px'}} onClick={handleEye2}></i>
                 </div>
             </div>
             <span className="or">Address</span>
