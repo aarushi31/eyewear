@@ -86,9 +86,10 @@ function Register() {
 
 
     return (
-        <div className="login-container" style={{}}>
-            <h4>Register</h4>
-            <span>Already a member?<Link to="/login">Login</Link></span>
+    
+    <div className="login-container" style={{width:'100%',backgroundColor: '#FFF1EC'}}>
+            <h4 style={{width:'100%',display:'flex',justifyContent:'left',paddingLeft:'200px'}}>Register</h4>
+            {/* <span>Already a member?<Link to="/login">Login</Link></span> */}
             <div className="login-row">
                 <div className="row-input">
                     <label>Firstname</label>
@@ -160,8 +161,10 @@ function Register() {
                 <input className="login-input" placeholder="Pincode" type="text" value={pincode} onChange={(e)=>setpincode(e.target.value)}/>
                 </div>
             </div>
-            <Button type="primary" onClick={(e)=>handleSubmit(e)}>Register</Button>
+            <button onClick={(e)=>handleSubmit(e)} className="login">Register</button>
             {error && <Alert variant="danger" style={{marginTop:'30px'}}>{error}</Alert>}
+            <span className="or">Or</span>
+            <button onClick={()=>history.push('/login')} className="outlined">Login</button>
 
         </div>
     )

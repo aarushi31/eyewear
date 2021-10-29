@@ -1,13 +1,14 @@
 import React from 'react'
 import './Login.css'
 import {Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 
 
 function EditProfile() {
+    const history=useHistory()
     return (
-        <div className="login-container" style={{}}>
-            <h4>Edit Profile</h4>
+        <div className="login-container" style={{width:'100%',backgroundColor: '#FFF1EC'}}>
+            <h4 style={{width:'100%',display:'flex',justifyContent:'left',paddingLeft:'200px'}}>Edit Profile</h4>
             
             <div className="login-row">
                 <div className="row-input">
@@ -80,10 +81,10 @@ function EditProfile() {
                 <input className="login-input" placeholder="Pincode" type="text"/>
                 </div>
             </div>
-            <div className="login-row" style={{justifyContent:'center'}}>
-                <Button type="primary" href="/change-password" style={{marginTop:'30px',width:'250px'}}>Change Password</Button>
-                <Button type="primary" style={{marginLeft:'20px'}}>Save Changes</Button>
-            </div>
+            
+                <button onClick={()=>history.push('/change-password')} className="login">Change Password</button>
+                <button className="outlined">Save Changes</button>
+           
             
 
         </div>

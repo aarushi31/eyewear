@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css'
 import {Button} from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
+import image from '../../images/login.png'
+import eye from '../../images/eye.png'
 
 function Login() {
+    const history=useHistory()
+    const [type,setType]=useState('password');
     return (
-        <div className="login-container">
-            <h4>Login</h4>
+        <div className="user-container">
+            <div className="login-container"><h4>Login</h4>
             <input className="login-input" type="text" placeholder="Email/username"/>
-            <input className="login-input" type="password" placeholder="Password"/>
-            <Button type="primary">Login</Button>
+
+            <input className="login-input" type="password" placeholder="Password" style={{height:'50px'}}/>
+            
+            <button className="login">Login</button>
             <span className="or">Or</span>
-            <span style={{marginTop:'30px'}}>Don't have an account?<Link to="/register">Create one here</Link></span>
+            <button onClick={()=>history.push('/register')} className="outlined">Create one here</button></div>
+            <img src={image}alt=""/>
         </div>
     )
 }
