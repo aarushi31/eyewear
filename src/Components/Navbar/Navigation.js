@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Navbar.css'
 import {Navbar,NavDropdown,Nav,Container,OverlayTrigger,Popover} from 'react-bootstrap'
 import logo from '../../images/logo2.png'
+import { useDispatch, useSelector } from 'react-redux'
+import {selectUser} from '../../features/userslice'
+import {logout} from '../../features/userslice'
+import { useHistory } from 'react-router'
 
+function Navigation() {
 
-function navbar() {
+    const user=useSelector(selectUser)
+    const [loggedin,setLoggedin]=useState();
+    const dispatch=useDispatch()
+    const history=useHistory()
+
+    const handleLogout=(e)=>{
+      e.preventDefault();
+      dispatch(logout())
+      localStorage.removeItem('email');
+      localStorage.removeItem('password')
+      history.push('/')
+      
+    }
 
     const popover=()=>{
       return(
@@ -87,9 +104,10 @@ function navbar() {
 
       
       <NavDropdown title={<i class="fas fa-user-circle" style={{fontSize:'30px',color:'#106894',marginLeft:'20px'}}></i>} id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-        <NavDropdown.Item href="/register">Register</NavDropdown.Item>
-        <NavDropdown.Item href="/edit-profile">Edit Profile</NavDropdown.Item>
+        {user ? <><NavDropdown.Item onClick={(e)=>handleLogout(e)}>Logout</NavDropdown.Item>
+        <NavDropdown.Item href="/edit-profile">Edit Profile</NavDropdown.Item></> : <NavDropdown.Item href="/login">Login</NavDropdown.Item>}
+        
+        
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
@@ -98,4 +116,4 @@ function navbar() {
     )
 }
 
-export default navbar
+export default Navigation

@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './App.css';
 import Copyright from './Components/Footer/Copyright';
 import Footer from './Components/Footer/Footer';
 import Home from './Components/Home';
-import Navbar from './Components/Navbar/Navbar'
+import Navbar from './Components/Navbar/Navigation'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Contact from './Components/Contact/Contact';
 import About from './Components/About/About';
@@ -24,8 +24,26 @@ import Login from './Components/Login/Login';
 import Register from './Components/Login/Register';
 import EditProfile from './Components/Login/EditProfile';
 import ChangePassword from './Components/Login/ChangePassword';
+import {login} from './features/userslice'
+import { useDispatch } from 'react-redux'
+
 
 function App() {
+
+  const dispatch=useDispatch();
+  
+
+  useEffect(()=>{
+    if(localStorage.getItem('email')){
+    dispatch(login({
+      email:localStorage.getItem('email'),
+      password:localStorage.getItem('password'),
+      loggedIn:localStorage.getItem('loggedIn')
+    }))
+  }
+  },[])
+
+
   return (
     <Router>
       <Navbar/>

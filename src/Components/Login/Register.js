@@ -135,7 +135,7 @@ function Register() {
             <div className="login-row">
                 <div className="row-input">
                 <label>Mobile no.</label>
-                <input className="login-input" placeholder="Mobile no." type="text" value={mobile} onChange={(e)=>setmobile(e.target.value)}/>
+                <input className="login-input" placeholder="Mobile no. with country code" type="text" value={mobile} onChange={(e)=>setmobile(e.target.value)}/>
                 </div>
                 <div className="row-input">
                 <label>Company</label>
