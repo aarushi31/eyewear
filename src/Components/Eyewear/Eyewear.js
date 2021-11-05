@@ -14,8 +14,10 @@ function Eyewear() {
     const [show2,setShow2]=useState(false);
 
 
-    const handleAddToCart=()=>{
+    const [pid,setPid]=useState();
+    const handleAddToCart=(id)=>{
         setShow(true);
+        setPid(id);
         
     }
 
@@ -27,16 +29,19 @@ function Eyewear() {
 
 
     
-
+    const [products,setProducts]=useState([]);
     useEffect(()=>{
         axios.post('http://s2seyewearfortesting.pythonanywhere.com/api/products/')
-        .then(res=>console.log(res))
+        .then(res=>{
+            //console.log(res)
+            setProducts(res.data.Products)
+        })
         .catch(err=>console.log(err))
-    },[])
+    },[products])
 
 
     const [gender,setGender]=useState("all")
-    const [products,setProducts]=useState([]);
+    
 
 
     const genderData={
@@ -44,27 +49,29 @@ function Eyewear() {
 
     }
 
-    const showProducts=()=>{
-        if(gender==="all"){
-            axios.post('http://s2seyewearfortesting.pythonanywhere.com/api/products/')
-            .then(res=>{
-                console.log(res)
-                setProducts(res.data.Products);
-            }
-            )
-            .catch(err=>console.log(err))
-        }
+    // const showProducts=()=>{
+    //     if(gender==="all"){
+    //         axios.post('http://s2seyewearfortesting.pythonanywhere.com/api/products/')
+    //         .then(res=>{
+    //             console.log(res.data.Products)
+    //             setProducts(res.data.Products);
+    //         }
+    //         )
+    //         .catch(err=>console.log(err))
+    //     }
 
-        else{
-            axios.post('http://s2seyewearfortesting.pythonanywhere.com/api/products_by_gender/',genderData)
-            .then(res=>{
-                console.log(res)
-                setProducts(res.data.Products);
-            }
-            )
-            .catch(err=>console.log(err))
-        }
-    }
+    //     else{
+    //         axios.post('http://s2seyewearfortesting.pythonanywhere.com/api/products_by_gender/',genderData)
+    //         .then(res=>{
+    //             console.log(res)
+    //             setProducts(res.data.Products);
+    //         }
+    //         )
+    //         .catch(err=>console.log(err))
+    //     }
+
+        
+    // }
 
 
 
@@ -116,7 +123,7 @@ function Eyewear() {
                         <span style={{textTransform:'uppercase',color:'black',cursor:'pointer'}} onClick={handleAddToCart}>Add to cart</span>
                     </div> */}
                         
-                        <div className="card">
+                        {/* <div className="card">
                             <img src={coin} onClick={()=>history.push('/product/eyewear')}/>
                             <hr className="line"/>
                             <span style={{fontSize:'12px'}} onClick={()=>history.push('/product/eyewear')}>Blue Oval Full Rim TR-90 Frame-Computer Spex (Zero Power)</span>
@@ -145,11 +152,32 @@ function Eyewear() {
                                 <div className="vertical-line"></div>
                                 <span><img src={heart}/></span>
                             </div>
-                        </div>
+                        </div> */}
+                        {
+                            products.map((item,idx)=>{
+                                return(
+                                    <div className="card">
+                                                <img src={coin} onClick={()=>history.push('/product/eyewear')}/>
+                                                <hr className="line"/>
+                                                <span style={{fontSize:'12px'}} onClick={()=>history.push('/product/eyewear')}>{item.name}</span>
+                                                
+                                                
+                                                <span className="price1">{item.after_sale_price}</span>
+                                                <span className="price2">{item.actual_price}</span>
+                                                <hr className="line"/>
+                                                <div className="buy-options">
+                                                    <span onClick={()=>handleAddToCart(item.pid)}><img src={bag}/></span>
+                                                    <div className="vertical-line"></div>
+                                                    <span><img src={heart}/></span>
+                                                </div>
+                                            </div>
+                                )
+                            })
+                        }
                 </div>
             </div>
             <Options show={show} onHide={(e)=>closeModal(1,e)}/>
-            <Lens show={show2} onHide={()=>setShow2(false)}/>
+            <Lens show={show2} onHide={()=>setShow2(false)} pid={pid}/>
         </div>
     )
 }

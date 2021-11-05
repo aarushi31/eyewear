@@ -13,7 +13,7 @@ function Lens(props) {
         if(localStorage.getItem("option")==1){
             //console.log('hiiii')
             return(
-                <LensOptions/>
+                <LensOptions pid={props.pid}/>
             )
         }
         else if(localStorage.getItem("option")==2 || localStorage.getItem("option")==3){

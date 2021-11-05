@@ -4,7 +4,7 @@ import {Alert, Button} from 'react-bootstrap'
 import { useHistory } from 'react-router'
 import axios from 'axios'
 
-function LensOptions() {
+function LensOptions(props) {
     const history=useHistory()
     const shapassword=localStorage.getItem('password')
     const username=localStorage.getItem('email');
@@ -62,7 +62,7 @@ function LensOptions() {
         e.preventDefault();
         setSuccess("");
         var data = JSON.stringify({
-            "pid":1,
+            "pid":props.pid,
             "quantity":1,
             "option_id":option,
             "Text":"Nothing"
@@ -155,7 +155,7 @@ function LensOptions() {
             
         </div>
         <Button type="primary" style={{marginTop:'20px'}} onClick={(e)=>addtocart(e)}>Submit</Button>
-        {success && <Alert variant="success">{success}</Alert>}
+        {success && <Alert variant="success" style={{marginTop:'30px'}}>{success}</Alert>}
         </>
     )
 }
