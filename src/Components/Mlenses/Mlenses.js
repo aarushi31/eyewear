@@ -12,6 +12,7 @@ function Mlenses() {
     const [show,setShow]=useState(true);
     const [show2,setShow2]=useState(false);
     const [option,setOption]=useState("1");
+    const [gender,setGender]=useState("all")
     
     const handleAddToCart=()=>{
         history.push('/cart')

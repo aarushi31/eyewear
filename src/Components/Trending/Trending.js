@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../Eyewear/Eyewear.css'
 import {Link} from 'react-router-dom'
 
 function Trending() {
+
+    const [gender,setGender]=useState("all")
     return (
         <div className="main-container">
             <div className="categories">

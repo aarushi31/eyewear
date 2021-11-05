@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../Eyewear/Eyewear.css'
 import {Link} from 'react-router-dom'
 import {useHistory} from 'react-router-dom'
@@ -11,7 +11,10 @@ function Sunshades() {
     const history=useHistory()
     const handleAddToCart=()=>{
         history.push('/cart')
+
     }
+
+    const [gender,setGender]=useState("all")
 
     return (
         <div className="main-container">
