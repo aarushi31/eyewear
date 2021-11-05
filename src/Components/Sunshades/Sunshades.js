@@ -19,14 +19,14 @@ function Sunshades() {
                 <span className="category-heading" style={{position:'relative',bottom:'25px'}}>Categories</span>
                 <span className="category-item"><Link to="/accessories" className="link">Accessories</Link></span>
                 <span className="category-item"><Link to="/eyewear" className="link">Eye Glasses</Link></span>
-                <span className="category-item">Gender</span>
+                {/* <span className="category-item">Gender</span>
                 <span className="sub-category-items"><Link to="/male" className="link">Male</Link></span>
                 <span className="sub-category-items"><Link to="/female" className="link">Female</Link></span>
-                <span className="sub-category-items"><Link to="/kids" className="link">Kids</Link></span>
+                <span className="sub-category-items"><Link to="/kids" className="link">Kids</Link></span> */}
                 <span className="category-item"><Link to="/magic-lenses" className="link">Magic Lenses</Link></span>
-                <span className="category-item">Reading Glasses</span>
+                {/* <span className="category-item">Reading Glasses</span>
                 <span className="sub-category-items"><Link to="/bifocal" className="link">Bifocal</Link></span>
-                <span className="sub-category-items"><Link to="/single-vision" className="link">Single vision</Link></span>
+                <span className="sub-category-items"><Link to="/single-vision" className="link">Single vision</Link></span> */}
                 <span className="category-item"><Link to="/sun-shades" className="link">Sun Shades</Link></span>
                 <span className="category-item"><Link to="/trending" className="link">Trending</Link></span>
                 
@@ -37,6 +37,14 @@ function Sunshades() {
                 <span className="desc">Home | Sunshades</span>
                 <span className="desc2">under this section we provide you with all the accessories required to help you taking care of your products</span>
                 <span className="desc" style={{fontSize:'14px'}}>Showing all 2 results</span>
+                <div className="filters">
+                    <select value={gender} onChange={(e)=>setGender(e.target.value)}> 
+                        <option value="Male" name="men">Men</option>
+                        <option value="Female" name="women">Women</option>
+                        <option value="Kids" name="kids">Kids</option>
+                        <option value="all" name="all">All</option>
+                    </select>
+                </div>
                 <div className="card-container">
                     {/* <div className="product" style={{border:'none'}}>
                         <img src="https://s2seyewear.com/wp-content/uploads/2021/09/12_126-300x133.jpg" alt="product" onClick={()=>history.push('/product')} style={{cursor:'pointer'}}/>

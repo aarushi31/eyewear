@@ -4,7 +4,7 @@ import LensOptions from './LensOptions';
 import './Options.css'
 import Prescription from './Prescription';
 
-function Options(props) {
+function Lens(props) {
     const [progress,setProgress]=useState(2);
 
     const [option,setOption]=useState("1");
@@ -25,7 +25,7 @@ function Options(props) {
 
     //console.log(option)
 
-    const handleSubmit=()=>{
+    const handleSubmit=()=>{ 
 
     }
 
@@ -62,4 +62,4 @@ function Options(props) {
     )
 }
 
-export default Options
+export default Lens

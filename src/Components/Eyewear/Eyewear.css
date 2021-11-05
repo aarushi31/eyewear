@@ -7,13 +7,18 @@
     background-color: #FFF1EC;
 }
 
+.filters{
+    margin-left: 60px;
+}
+
 .categories{
     display: flex;
     flex-direction: column;
     padding-left: 30px;
-    justify-content: center;
+    justify-content: flex-start;
     width: 20%;
     border-right:0.5px solid rgb(0, 0, 0);
+    margin-bottom: 330px;
 }
 
 .category-heading{

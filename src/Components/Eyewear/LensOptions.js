@@ -1,19 +1,102 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Options.css'
 import {Button} from 'react-bootstrap'
 import { useHistory } from 'react-router'
+import axios from 'axios'
 
 function LensOptions() {
     const history=useHistory()
+    const shapassword=localStorage.getItem('password')
+    const username=localStorage.getItem('email');
+    const token = Buffer.from(`${username}:${shapassword}`, 'utf8').toString('base64')
+    
+    // const handleProceed=()=>{
 
-    const handleProceed=()=>{
-        history.push('/cart')
+    //     history.push('/cart')
+    // }
+
+    const [active1,setActive1]=useState(true)
+    const [active2,setActive2]=useState(false)
+    const [active3,setActive3]=useState(false)
+    const [active4,setActive4]=useState(false)
+
+    const [option,setOption]=useState(1);
+
+    const handleActive1=(e)=>{
+        e.preventDefault();
+        setActive1(true);
+        setOption(1)
+        setActive2(false);
+        setActive3(false);
+        setActive4(false);
     }
+
+    const handleActive2=(e)=>{
+        e.preventDefault();
+        setActive2(true);
+        setOption(2)
+        setActive1(false);
+        setActive3(false);
+        setActive4(false);
+    }
+    const handleActive3=(e)=>{
+        e.preventDefault();
+        setActive3(true);
+        setOption(3)
+        setActive2(false);
+        setActive1(false);
+        setActive4(false);
+    }
+    const handleActive4=(e)=>{
+        e.preventDefault();
+        setActive4(true);
+        setOption(4)
+        setActive2(false);
+        setActive3(false);
+        setActive1(false);
+    }
+
+
+    const addtocart=(e)=>{
+        e.preventDefault();
+        var data = JSON.stringify({
+            "pid":1,
+            "quantity":1,
+            "option_id":option,
+            "Text":"Nothing"
+
+          });
+          
+          var config = {
+            method: 'post',
+            url: 'http://s2seyewearfortesting.pythonanywhere.com/api/addcart/',
+            headers: { 
+              'Authorization': `Basic ${token}`, 
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          
+          axios(config)
+          .then(function (response) {
+            console.log(JSON.stringify(response.data));
+            if(response.data.success){
+                history.push('/cart')
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+    }
+    
+
+
 
     return (
         <>
         <div className="lens-cards">
-            <div className="lens-card">
+            <div className={`lens-card ${active1?"active":""}`} onClick={(e)=>handleActive1(e)}>
                 <div className="blue-part">
                     <span>Frame + Lens ₹3600</span>
                     <span>1 year warranty</span>
@@ -26,7 +109,7 @@ function LensOptions() {
                 <span className="grey-text">Blue block and anti-glare</span>
                 <span className="grey-text">Blue block and anti-glare</span>
             </div>
-            <div className="lens-card">
+            <div className={`lens-card ${active2?"active":""}`} onClick={(e)=>handleActive2(e)}>
                 <div className="blue-part">
                     <span>Frame + Lens ₹3600</span>
                     <span>1 year warranty</span>
@@ -39,7 +122,7 @@ function LensOptions() {
                 <span className="grey-text">Blue block and anti-glare</span>
                 <span className="grey-text">Blue block and anti-glare</span>
             </div>
-            <div className="lens-card">
+            <div className={`lens-card ${active3?"active":""}`} onClick={(e)=>handleActive3(e)}>
                 <div className="blue-part">
                     <span>Frame + Lens ₹3600</span>
                     <span>1 year warranty</span>
@@ -52,7 +135,7 @@ function LensOptions() {
                 <span className="grey-text">Blue block and anti-glare</span>
                 <span className="grey-text">Blue block and anti-glare</span>
             </div>
-            <div className="lens-card">
+            <div className={`lens-card ${active4?"active":""}`} onClick={(e)=>handleActive4(e)}>
                 <div className="blue-part">
                     <span>Frame + Lens ₹3600</span>
                     <span>1 year warranty</span>
@@ -68,7 +151,7 @@ function LensOptions() {
 
             
         </div>
-        <Button type="primary" style={{marginTop:'20px'}} onClick={handleProceed}>Submit</Button>
+        <Button type="primary" style={{marginTop:'20px'}} onClick={(e)=>addtocart(e)}>Submit</Button>
         </>
     )
 }

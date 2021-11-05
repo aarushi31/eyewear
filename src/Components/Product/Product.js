@@ -4,6 +4,7 @@ import StarRating from 'react-bootstrap-star-rating';
 import { useHistory } from 'react-router';
 import Options from '../Sunshades/Options';
 import './Product.css'
+import axios from 'axios'
 
 
 function Product() {
@@ -19,6 +20,16 @@ function Product() {
 
     const images=["https://s2seyewear.com/wp-content/uploads/2021/09/12_126-300x133.jpg","https://s2seyewear.com/wp-content/uploads/2021/09/13_118.jpg","https://s2seyewear.com/wp-content/uploads/2021/09/14_118.jpg"];
     const [selected,setSelected]=useState(images[0]);
+    const shapassword=localStorage.getItem('password')
+    const username=localStorage.getItem('email');
+    const token = Buffer.from(`${username}:${shapassword}`, 'utf8').toString('base64')
+
+    const [quantity,setQuantity]=useState(1);
+
+    
+
+
+
  
     return (
         <div style={{background:'#FFF1EC'}}>
@@ -44,7 +55,7 @@ function Product() {
                                 <img src={img} style={{width:'200px'}} key={idx} onClick={()=>setSelected(img)}/>
                             )
                         })}
-                    </div>
+                    </div> 
                 </div>
                 <div className="details">
                     <span className="name">Black Oval Full Rim Acetate Frame With Gradient Grey UV Sun Lens</span>
@@ -57,7 +68,7 @@ function Product() {
                         
                     </div>
                     <div className="purchase">
-                        <input placeholder="Enter quantity" type="text"/>
+                        <input placeholder="Enter quantity" type="text" value={quantity} onChange={(e)=>setQuantity(e.target.value)}/>
                         <button className="outlined">Check</button>
                     </div>
                     <div className="purchase">
@@ -194,8 +205,8 @@ function Product() {
                     </Button>
                     
                 </Modal.Footer>
-            </Modal>
-            <Options show={show2} onHide={()=>setShow2(false)}/>
+            </Modal> 
+            <Options show={show2} onHide={()=>setShow2(false)} quantity={quantity}/>
 
            
         </div>

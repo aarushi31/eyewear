@@ -54,15 +54,15 @@ function App() {
         <Route path="/eyewear" component={Eyewear}/>
         <Route path="/accessories" component={Accessory}/>
         <Route path="/magic-lenses" component={Mlenses}/>
-        <Route path="/bifocal" component={Bifocal}/>
+        {/* <Route path="/bifocal" component={Bifocal}/>
         <Route path="/single-vision" component={Single}/>
         <Route path="/male" component={Male}/>
         <Route path="/female" component={Female}/>
-        <Route path="/kids" component={Kids}/>
+        <Route path="/kids" component={Kids}/> */}
         <Route path="/sun-shades" component={Sunshades}/>
         <Route path="/trending" component={Trending}/>
         <Route path="/cart" component={Cart}/>
-        <Route path="/product" component={Product}/>
+        <Route exact path="/product" component={Product}/>
         <Route path="/product/eyewear" component={EyewearProduct}/>
         <Route path="/login" component={Login}/>
         <Route path="/register" component={Register}/>

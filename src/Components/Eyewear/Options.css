@@ -61,6 +61,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(209, 209, 209);
+    cursor: pointer;
 }
 
 .blue-part{
@@ -115,4 +116,9 @@
     flex-direction: column;
     font-size: 14px;
     color: grey;
+}
+
+
+.active{
+    border: 2px solid blue;
 }

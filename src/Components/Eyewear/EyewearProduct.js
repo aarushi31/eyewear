@@ -23,7 +23,9 @@ function EyewearProduct() {
     const closeModal=(success,e)=>{
         // e.preventDefault()
         setShow(false);
-        if(success) setShow2(true)
+        if(success){
+            setShow2(true);
+        }    
     }
 
 
@@ -138,7 +140,7 @@ function EyewearProduct() {
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
-                    </Button>
+                    </Button> 
                     
                 </Modal.Footer>
             </Modal>
