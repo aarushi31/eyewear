@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Options.css'
-import {Button} from 'react-bootstrap'
+import {Alert, Button} from 'react-bootstrap'
 import { useHistory } from 'react-router'
 import axios from 'axios'
 
@@ -56,9 +56,11 @@ function LensOptions() {
         setActive1(false);
     }
 
+    const [success,setSuccess]=useState("")
 
     const addtocart=(e)=>{
         e.preventDefault();
+        setSuccess("");
         var data = JSON.stringify({
             "pid":1,
             "quantity":1,
@@ -81,7 +83,8 @@ function LensOptions() {
           .then(function (response) {
             console.log(JSON.stringify(response.data));
             if(response.data.success){
-                history.push('/cart')
+                //history.push('/cart')
+                setSuccess("Product added to cart");
             }
           })
           .catch(function (error) {
@@ -152,6 +155,7 @@ function LensOptions() {
             
         </div>
         <Button type="primary" style={{marginTop:'20px'}} onClick={(e)=>addtocart(e)}>Submit</Button>
+        {success && <Alert variant="success">{success}</Alert>}
         </>
     )
 }
