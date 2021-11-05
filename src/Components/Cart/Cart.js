@@ -7,7 +7,9 @@ function Cart() {
 
 
     const [products,setProducts]=useState([]);
-
+    const shapassword=localStorage.getItem('password')
+    const username=localStorage.getItem('email');
+    const token = Buffer.from(`${username}:${shapassword}`, 'utf8').toString('base64')
 
     
       useEffect(()=>{
@@ -15,7 +17,7 @@ function Cart() {
             method: 'post',
             url: 'http://s2seyewearfortesting.pythonanywhere.com/api/cartproduct/\n',
             headers: { 
-              'Authorization': 'Basic YXJ5YW46c2hhMjU2JFN0OWxaS2U2Y2t4TTFSbVgkN2NhMzJlYWRiNzBjZmYxOThkOWYwZWJjNTIzYTg0ZWYxMjBiNjc1YmI2ZDE0NmE2NzUzOTk1ZWU1MmFlZjUwNQ=='
+              'Authorization': `Basic ${token}`
             }
           };
           
